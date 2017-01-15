@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchVenetian } from '../actions/index';
 import { Tabs, Tab } from 'material-ui/Tabs';
 
 class VenetianTabs extends Component {
+	componentDidMount() {
+		this.props.fetchVenetian();
+	}
+
 	render() {
 		return (
 			<Tabs>
@@ -12,6 +17,7 @@ class VenetianTabs extends Component {
 			    </div>
 			  </Tab>
 			  <Tab label="DETAILS">
+			  	sup
 			  </Tab>
 			  <Tab label="LOCATION">
 			  </Tab>
@@ -29,4 +35,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps)(VenetianTabs);
+export default connect(mapStateToProps, { fetchVenetian })(VenetianTabs);

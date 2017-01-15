@@ -6,6 +6,8 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 import App from './components/App';
 import './index.css';

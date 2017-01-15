@@ -5,8 +5,7 @@ export default (state = {
 }, action) => {
 	switch(action.type) {
 		case (TYPES.FETCH_HOTELS):
-			const { list } = action.payload;
-			return {...state, hotels: list};
+			return {...state, hotels: action.payload};
 		default:
 			return state;
 	}

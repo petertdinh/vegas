@@ -11,10 +11,12 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="header">
-				<img src={"http://localhost:8888/assets/images/venetian.jpg"} />
+				<img src={"http://localhost:8888/assets/images/venetian.jpg"}
+						 alt="hotel" />
 				<div>
 					<h1>{this.props.name}</h1>
 					<StarRatingComponent
+						name="rating"
 						editing={false}
 						starCount={5}
 						value={5} />

@@ -5,7 +5,7 @@ export const fetchHotels = () => {
 	return (dispatch) => {
 		axios.get('http://localhost:8888/api/hotels')
 			.then(resp => {
-				dispatch({type: TYPES.FETCH_HOTELS, payload: resp.list});
+				dispatch({type: TYPES.FETCH_HOTELS, payload: resp.data.list});
 			})
 			.catch(err => {
 				console.error(err);

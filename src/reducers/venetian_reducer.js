@@ -6,7 +6,7 @@ export default (state = {
 	location: '',
 	name: '',
 	price: 0,
-	phone: '',
+	phoneNumber: '',
 }, action) => {
 	switch(action.type) {
 		case (TYPES.FETCH_VENETIAN):
@@ -16,9 +16,9 @@ export default (state = {
 				location, 
 				name, 
 				price, 
-				phone 
+				phoneNumber 
 			} = action.payload;
-			return {...state, description, details, name, price, phone, location: location.address};
+			return {...state, description, details, name, price, phoneNumber, location: location.address};
 		default:
 			return state;
 	}

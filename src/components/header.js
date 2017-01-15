@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchVenetian } from '../actions/index';
 import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
+import './styles/header.css';
 
 class Header extends Component {
 	componentDidMount() {
@@ -11,20 +12,26 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="header">
-				<img src={"http://localhost:8888/assets/images/venetian.jpg"}
-						 alt="hotel" />
-				<div>
-					<h1>{this.props.name}</h1>
-					<StarRatingComponent
-						name="rating"
-						editing={false}
-						starCount={5}
-						value={5} />
-					<p>{`Strip ${this.props.phoneNumber} Best Price Guarantee`}</p>
+				<div className="main">
+					<img src={"http://localhost:8888/assets/images/venetian.jpg"}
+							 height={180}
+							 width={250}
+							 alt="hotel" />
+					<div className="hotel-info">
+						<div className="hotel-name">
+							{this.props.name}
+						</div>
+							<StarRatingComponent
+								name="rating"
+								editing={false}
+								starCount={5}
+								value={5} />
+						<div>{`Strip ${this.props.phoneNumber} Best Price Guarantee`}</div>
+					</div>
 				</div>
-				<div>
-					<p>{`$${this.props.price}`}</p>
-					<p>Hotel Rooms From</p>
+				<div className="price-info">
+					<div className="price">{`$${this.props.price}`}</div>
+					<div>Hotel Rooms From</div>
 				</div>
 			</div>
 		)

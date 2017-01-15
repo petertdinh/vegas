@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchHotels } from '../actions/index';
+import './styles/hotels_list.css';
 
 class HotelsList extends Component {
 	componentDidMount() {
@@ -16,7 +17,7 @@ class HotelsList extends Component {
 		));
 
 		return (
-			<div>
+			<div className="hotels-list">
 				{list}
 			</div>
 		)

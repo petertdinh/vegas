@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchVenetian } from '../actions/index';
 import { Tabs, Tab } from 'material-ui/Tabs';
+import './styles/venetian_tabs.css';
 
 class VenetianTabs extends Component {
 	componentDidMount() {
@@ -10,7 +11,7 @@ class VenetianTabs extends Component {
 
 	render() {
 		return (
-			<Tabs>
+			<Tabs className="tabs">
 			  <Tab label="DESCRIPTION">
 			    <div>
 			    	{this.props.description}

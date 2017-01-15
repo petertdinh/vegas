@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import { Tabs, Tab } from 'material-ui/Tabs';
 
-class Tabs extends Component {
+class VenetianTabs extends Component {
 	render() {
 		return (
 			<Tabs>
 			  <Tab label="DESCRIPTION">
 			    <div>
+			    	{this.props.description}
 			    </div>
 			  </Tab>
 			  <Tab label="DETAILS">
@@ -20,7 +21,12 @@ class Tabs extends Component {
 }
 
 const mapStateToProps = (state) => {
+	const { description, details, location } = state.venetian;
+	return {
+		description,
+		details,
+		location
+	};
+};
 
-}
-
-export default connect(mapStateToProps)(Tabs);
+export default connect(mapStateToProps)(VenetianTabs);

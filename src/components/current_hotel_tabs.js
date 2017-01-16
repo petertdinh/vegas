@@ -5,6 +5,19 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import './styles/current_hotel_tabs.css';
 
 class CurrentHotelTabs extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { more: false };
+	}
+
+	handleMoreOrLessClick = () => {
+		if(this.state.more) {
+			console.log('sup');
+			this.setState({more: false});
+		} else {
+			this.setState({more: true});
+		}
+	}
 
 	render() {
 		const description = this.props.description.split('\r\n\r\n').map((paragraph, index) => {
@@ -34,11 +47,12 @@ class CurrentHotelTabs extends Component {
 		return (
 			<Tabs className="tabs" {...tabsStyle}>
 			  <Tab label="DESCRIPTION">
-			    <div className="desc-tag">
+			    <div className="desc-tag" style={this.state.more ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			    	{description}
 			    </div>
-			    <div>
-			    	<img src
+			    <div onClick={() => {
+			    	this.handleMoreOrLessClick();
+			    }}>
 			    	SHOW FULL DESCRIPTION
 			    </div>
 			  </Tab>

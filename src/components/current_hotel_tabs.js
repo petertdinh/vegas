@@ -18,19 +18,45 @@ class CurrentHotelTabs extends Component {
 					<div>{detail.value}</div>
 				</div>
 			)
-		})
+		});
+
+		const tabsStyle = {
+			contentContainerStyle: {
+				width: '90%',
+				margin: 'auto'
+			},
+			tabItemContainerStyle: {
+				width: '90%',
+				margin: 'auto'
+			}
+		};
 
 		return (
-			<Tabs className="tabs">
+			<Tabs className="tabs" {...tabsStyle}>
 			  <Tab label="DESCRIPTION">
-			    <div>
+			    <div className="desc-tag">
 			    	{description}
+			    </div>
+			    <div>
+			    	<img src
+			    	SHOW FULL DESCRIPTION
 			    </div>
 			  </Tab>
 			  <Tab label="DETAILS">
 			  	{details}
 			  </Tab>
 			  <Tab label="LOCATION">
+			  	<div>
+				  	<img src={`http://image.flaticon.com/icons/svg/33/33622.svg`}
+				  			 height={25}
+				  			 width={25}
+				  			 alt="map-marker" />
+				  	{this.props.location}
+			  	</div>
+			  	<img src={`http://localhost:8888/assets/images/map_venetian.png`}
+			  			 height={'70%'}
+			  			 width={'70%'}
+			  			 alt="hotel" />
 			  </Tab>
 			</Tabs>
 		)

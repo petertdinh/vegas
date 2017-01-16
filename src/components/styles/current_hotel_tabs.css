@@ -1,4 +1,15 @@
 .tabs {
 	border: 4px solid green;
 	flex: 5;
+	align-self: stretch;
+	width: 90%;
+}
+
+.desc-paragraph {
+	padding: 15px 15px;
+}
+
+.desc-tag {
+	height: 200px;
+	overflow: hidden;
 }

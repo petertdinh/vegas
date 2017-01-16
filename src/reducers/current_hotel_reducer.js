@@ -6,7 +6,7 @@ export default (state = {
 	location: '',
 	name: '',
 	price: 0,
-	phoneNumber: '',
+	phoneNumber: ''
 }, action) => {
 	switch(action.type) {
 		case (TYPES.FETCH_CURRENT_HOTEL):

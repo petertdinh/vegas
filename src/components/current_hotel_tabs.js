@@ -7,16 +7,27 @@ import './styles/current_hotel_tabs.css';
 class CurrentHotelTabs extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { more: false };
+		this.state = { moreDescription: false, moreDetails: false };
 	}
 
-	handleMoreOrLessClick = () => {
-		if(this.state.more) {
-			console.log('sup');
-			this.setState({more: false});
+	toggleMoreOrLess = (tab) => {
+		if(this.state[tab]) {
+			this.setState({[tab]: false});
 		} else {
-			this.setState({more: true});
+			this.setState({[tab]: true});
 		}
+	}
+
+	toggleDescription = () => {
+		this.toggleMoreOrLess('moreDescription');
+	}
+
+	toggleDetail = () => {
+		this.toggleMoreOrLess('moreDetails');
+	}
+
+	onTabChange = () => {
+		this.setState({moreDescription: false, moreDetails: false});
 	}
 
 	render() {
@@ -47,17 +58,24 @@ class CurrentHotelTabs extends Component {
 		return (
 			<Tabs className="tabs" {...tabsStyle}>
 			  <Tab label="DESCRIPTION">
-			    <div className="desc-tag" style={this.state.more ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
+			    <div className="desc-tag" style={this.state.moreDescription ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			    	{description}
 			    </div>
-			    <div onClick={() => {
-			    	this.handleMoreOrLessClick();
+			    <div className="toggle" onClick={() => {
+			    	this.toggleDescription();
 			    }}>
-			    	SHOW FULL DESCRIPTION
+			    	{this.state.moreDescription ? `HIDE FULL DESCRIPTION` : `SHOW FULL DESCRIPTION`}
 			    </div>
 			  </Tab>
 			  <Tab label="DETAILS">
-			  	{details}
+			  	<div className="detail-tag" style={this.state.moreDetails ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
+			  		{details}
+			  	</div>
+			  	<div className="toggle" onClick={() => {
+			  		this.toggleDetail();
+			  	}}>
+			  		{this.state.moreDetails ? `VIEW LESS DETAILS` : `VIEW MORE DETAILS`}
+			  	</div>
 			  </Tab>
 			  <Tab label="LOCATION">
 			  	<div>

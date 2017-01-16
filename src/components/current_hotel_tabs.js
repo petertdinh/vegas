@@ -8,8 +8,17 @@ class CurrentHotelTabs extends Component {
 
 	render() {
 		const description = this.props.description.split('\r\n\r\n').map((paragraph, index) => {
-			return <div key={index}>{paragraph}</div>
+			return <div className="desc-paragraph" key={index}>{paragraph}</div>
 		});
+
+		const details = this.props.details.map((detail, index) => {
+			return (
+				<div key={index} className="detail">
+					<div><strong>{detail.label}:</strong></div>
+					<div>{detail.value}</div>
+				</div>
+			)
+		})
 
 		return (
 			<Tabs className="tabs">
@@ -19,7 +28,7 @@ class CurrentHotelTabs extends Component {
 			    </div>
 			  </Tab>
 			  <Tab label="DETAILS">
-			  	sup
+			  	{details}
 			  </Tab>
 			  <Tab label="LOCATION">
 			  </Tab>

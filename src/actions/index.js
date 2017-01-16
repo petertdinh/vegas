@@ -13,11 +13,11 @@ export const fetchHotels = () => {
 	}
 };
 
-export const fetchVenetian = () => {
+export const fetchCurrentHotel = () => {
 	return (dispatch) => {
 		axios.get('http://localhost:8888/api/hotels/venetian')
 			.then(resp => {
-				dispatch({type: TYPES.FETCH_VENETIAN, payload: resp.data});
+				dispatch({type: TYPES.FETCH_CURRENT_HOTEL, payload: resp.data});
 			})
 			.catch(err => {
 				console.error(err);

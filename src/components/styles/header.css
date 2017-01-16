@@ -13,7 +13,9 @@
 }
 
 .hotel-info {
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .price-info {

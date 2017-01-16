@@ -4,7 +4,7 @@
 	margin: 1em 20em;
 }
 
-.footer {
+.body {
 	display: flex;
 	flex-direction: row;
 }

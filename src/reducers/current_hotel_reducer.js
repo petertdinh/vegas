@@ -9,7 +9,7 @@ export default (state = {
 	phoneNumber: '',
 }, action) => {
 	switch(action.type) {
-		case (TYPES.FETCH_VENETIAN):
+		case (TYPES.FETCH_CURRENT_HOTEL):
 			const { 
 				description,
 				details, 

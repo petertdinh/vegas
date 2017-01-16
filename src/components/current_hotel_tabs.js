@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchVenetian } from '../actions/index';
+import { fetchCurrentHotel } from '../actions/index';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import './styles/venetian_tabs.css';
+import './styles/current_hotel_tabs.css';
 
-class VenetianTabs extends Component {
-	componentDidMount() {
-		this.props.fetchVenetian();
-	}
+class CurrentHotelTabs extends Component {
 
 	render() {
+		const description = this.props.description.split('\r\n\r\n').map((paragraph, index) => {
+			return <div key={index}>{paragraph}</div>
+		});
+
 		return (
 			<Tabs className="tabs">
 			  <Tab label="DESCRIPTION">
 			    <div>
-			    	{this.props.description}
+			    	{description}
 			    </div>
 			  </Tab>
 			  <Tab label="DETAILS">
@@ -28,7 +29,7 @@ class VenetianTabs extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { description, details, location } = state.venetian;
+	const { description, details, location } = state.currentHotel;
 	return {
 		description,
 		details,
@@ -36,4 +37,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchVenetian })(VenetianTabs);
+export default connect(mapStateToProps, { fetchCurrentHotel })(CurrentHotelTabs);

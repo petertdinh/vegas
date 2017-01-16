@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import HotelsList from './hotels_list';
-import VenetianTabs from './venetian_tabs';
+import CurrentHotelTabs from './current_hotel_tabs';
 import './styles/App.css';
 
 class App extends Component {
@@ -9,9 +9,9 @@ class App extends Component {
     return (
       <div className="App">
       		<Header />
-      	<div className="footer">
+      	<div className="body">
 	      	<HotelsList />
-	        <VenetianTabs />
+	        <CurrentHotelTabs />
         </div>
       </div>
     );

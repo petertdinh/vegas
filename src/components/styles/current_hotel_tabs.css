@@ -1,7 +1,8 @@
 .tabs {
-	flex: 5;
 	align-self: stretch;
 	width: 90%;
+	margin: auto;
+	margin-top: 2em;
 }
 
 .desc-paragraph, .detail {

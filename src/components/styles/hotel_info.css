@@ -1,22 +1,18 @@
-.header {
+.hotel-info {
 	display: flex;
 	justify-content: space-between;
-}
-
-.hotel-name {
-	font-size: 2.5em;
+	width: 95%;
+	margin-left: 3em;
 }
 
 .main {
 	display: flex;
-	justify-content: space-between;
-	width: 68%;
-}
-
-.hotel-info {
-	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+}
+
+.hotel-name {
+	font-size: 2.5em;
 }
 
 .price-info {

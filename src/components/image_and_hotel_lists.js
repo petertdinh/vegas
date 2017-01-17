@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchHotels } from '../actions/index';
-import './styles/hotels_list.css';
+import './styles/image_and_hotel_lists.css'
 
-class HotelsList extends Component {
+class ImageAndHotelLists extends Component {
 	componentDidMount() {
 		this.props.fetchHotels();
 	}
@@ -17,8 +17,15 @@ class HotelsList extends Component {
 		));
 
 		return (
-			<div className="hotels-list">
-				{list}
+			<div className="image-and-hotel-lists">
+				<img className="image"
+						 src={`http://localhost:8888/assets/images/venetian.jpg`}
+						 height={180}
+						 width={250}
+						 alt="hotel" />
+				<div className="hotels-list">
+					{list}
+				</div>
 			</div>
 		)
 	}
@@ -31,4 +38,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchHotels })(HotelsList);
+export default connect(mapStateToProps, { fetchHotels })(ImageAndHotelLists);

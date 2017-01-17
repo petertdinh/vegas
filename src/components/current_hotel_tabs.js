@@ -33,7 +33,7 @@ class CurrentHotelTabs extends Component {
 
 	render() {
 		const description = this.props.description.split('\r\n\r\n').map((paragraph, index) => {
-			return <div className="desc-paragraph" key={index}>{paragraph}</div>
+			return <p className="desc-paragraph" key={index}>{paragraph}</p>
 		});
 
 		const details = this.props.details.map((detail, index) => {
@@ -44,20 +44,9 @@ class CurrentHotelTabs extends Component {
 				</div>
 			)
 		});
-
-		const tabsStyle = {
-			contentContainerStyle: {
-				width: '90%',
-				margin: 'auto'
-			},
-			tabItemContainerStyle: {
-				width: '90%',
-				margin: 'auto'
-			}
-		};
-
+		
 		return (
-			<Tabs className="tabs" {...tabsStyle} onChange={this.onTabChange} value={this.props.activeTab}>
+			<Tabs className="tabs" onChange={this.onTabChange} value={this.props.activeTab}>
 			  <Tab label="DESCRIPTION" value={0}>
 			    <div className="desc-tag" style={this.state.moreDescription ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			    	{description}

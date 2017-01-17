@@ -6,7 +6,8 @@ export default (state = {
 	location: '',
 	name: '',
 	price: 0,
-	phoneNumber: ''
+	phoneNumber: '',
+	activeTab: 0,
 }, action) => {
 	switch(action.type) {
 		case (TYPES.FETCH_CURRENT_HOTEL):
@@ -16,9 +17,14 @@ export default (state = {
 				location, 
 				name, 
 				price, 
-				phoneNumber 
+				phoneNumber,
+				starRating,
 			} = action.payload;
-			return {...state, description, details, name, price, phoneNumber, location: location.address};
+			return {...state, description, details, name, price, phoneNumber, starRating, location: location.address};
+		case (TYPES.FORCE_LOCATION_TAB):
+			return {...state, activeTab: 2};
+		case (TYPES.ON_TAB_CHANGE):
+			return {...state, activeTab: action.payload};
 		default:
 			return state;
 	}

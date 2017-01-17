@@ -24,3 +24,15 @@ export const fetchCurrentHotel = () => {
 			})
 	}
 };
+
+export const forceLocationTab = () => {
+	return (dispatch) => {
+		dispatch({type: TYPES.FORCE_LOCATION_TAB});
+	}
+}
+
+export const onTabChange = (value) => {
+	return (dispatch) => {
+		dispatch({type: TYPES.ON_TAB_CHANGE, payload: value});
+	}
+}

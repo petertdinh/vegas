@@ -5,6 +5,6 @@
 	width: 90%;
 }
 
-.desc-paragraph {
-	padding: 15px 15px;
+.desc-paragraph, .detail {
+	padding: 15px;
 }

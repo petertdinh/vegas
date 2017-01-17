@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrentHotel } from '../actions/index';
+import { fetchCurrentHotel, onTabChange } from '../actions/index';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import './styles/current_hotel_tabs.css';
 
@@ -26,7 +26,8 @@ class CurrentHotelTabs extends Component {
 		this.toggleMoreOrLess('moreDetails');
 	}
 
-	onTabChange = () => {
+	onTabChange = (value) => {
+		this.props.onTabChange(value);
 		this.setState({moreDescription: false, moreDetails: false});
 	}
 
@@ -56,8 +57,8 @@ class CurrentHotelTabs extends Component {
 		};
 
 		return (
-			<Tabs className="tabs" {...tabsStyle}>
-			  <Tab label="DESCRIPTION">
+			<Tabs className="tabs" {...tabsStyle} onChange={this.onTabChange} value={this.props.activeTab}>
+			  <Tab label="DESCRIPTION" value={0}>
 			    <div className="desc-tag" style={this.state.moreDescription ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			    	{description}
 			    </div>
@@ -67,8 +68,8 @@ class CurrentHotelTabs extends Component {
 			    	{this.state.moreDescription ? `HIDE FULL DESCRIPTION` : `SHOW FULL DESCRIPTION`}
 			    </div>
 			  </Tab>
-			  <Tab label="DETAILS">
-			  	<div className="detail-tag" style={this.state.moreDetails ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
+			  <Tab label="DETAILS" value={1}>
+			  	<div className="details-tag" style={this.state.moreDetails ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			  		{details}
 			  	</div>
 			  	<div className="toggle" onClick={() => {
@@ -77,7 +78,7 @@ class CurrentHotelTabs extends Component {
 			  		{this.state.moreDetails ? `VIEW LESS DETAILS` : `VIEW MORE DETAILS`}
 			  	</div>
 			  </Tab>
-			  <Tab label="LOCATION">
+			  <Tab label="LOCATION" value={2}>
 			  	<div>
 				  	<img src={`http://image.flaticon.com/icons/svg/33/33622.svg`}
 				  			 height={25}
@@ -96,12 +97,13 @@ class CurrentHotelTabs extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { description, details, location } = state.currentHotel;
+	const { description, details, location, activeTab } = state.currentHotel;
 	return {
 		description,
 		details,
-		location
+		location,
+		activeTab
 	};
 };
 
-export default connect(mapStateToProps, { fetchCurrentHotel })(CurrentHotelTabs);
+export default connect(mapStateToProps, { fetchCurrentHotel, onTabChange })(CurrentHotelTabs);

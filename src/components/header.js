@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchCurrentHotel } from '../actions/index';
+import { fetchCurrentHotel, forceLocationTab } from '../actions/index';
 import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
 import './styles/header.css';
@@ -25,15 +25,18 @@ class Header extends Component {
 								<StarRatingComponent
 									name="rating"
 									editing={false}
-									starCount={5}
+									starCount={this.props.starRating}
 									value={5} />
 						</div>
 						<div>
-							<img src={`http://image.flaticon.com/icons/svg/33/33622.svg`}
-									 height={15}
-									 width={15}
-									 alt="click-for-location" />
-							{`Strip ${this.props.phoneNumber} Best Price Guarantee`}
+							<div onClick={() => this.props.forceLocationTab()}>
+								<img src={`http://image.flaticon.com/icons/svg/33/33622.svg`}
+										 height={15}
+										 width={15}
+										 alt="click-for-location" />
+								<div>Strip</div>
+							</div>
+							{`${this.props.phoneNumber} Best Price Guarantee`}
 						</div>
 					</div>
 				</div>
@@ -47,12 +50,13 @@ class Header extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { name, price, phoneNumber } = state.currentHotel;
+	const { name, price, phoneNumber, starRating } = state.currentHotel;
 	return {
 		name,
 		price,
-		phoneNumber
+		phoneNumber,
+		starRating
 	};
 };
 
-export default connect(mapStateToProps, { fetchCurrentHotel })(Header);
+export default connect(mapStateToProps, { fetchCurrentHotel, forceLocationTab })(Header);

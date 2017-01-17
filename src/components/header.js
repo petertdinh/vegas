@@ -12,11 +12,12 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="header">
+				<img className="image"
+						 src={`http://localhost:8888/assets/images/venetian.jpg`}
+						 height={180}
+						 width={250}
+						 alt="hotel" />
 				<div className="main">
-					<img src={`http://localhost:8888/assets/images/venetian.jpg`}
-							 height={180}
-							 width={250}
-							 alt="hotel" />
 					<div className="hotel-info">
 						<div>
 							<div className="hotel-name">
@@ -28,21 +29,22 @@ class Header extends Component {
 									starCount={this.props.starRating}
 									value={5} />
 						</div>
-						<div>
-							<div onClick={() => this.props.forceLocationTab()}>
+						<div className="info">
+							<div className="marker" onClick={() => this.props.forceLocationTab()}>
 								<img src={`http://image.flaticon.com/icons/svg/33/33622.svg`}
 										 height={15}
 										 width={15}
 										 alt="click-for-location" />
 								<div>Strip</div>
 							</div>
-							{`${this.props.phoneNumber} Best Price Guarantee`}
+							<div>{`$${this.props.phoneNumber}`}</div>
+							<div>Best Price Guarantee</div>
 						</div>
 					</div>
-				</div>
-				<div className="price-info">
-					<div className="price">{`$${this.props.price}`}</div>
-					<div>Hotel Rooms From</div>
+					<div className="price-info">
+						<div className="price">{`$${this.props.price}`}</div>
+						<div>Hotel Rooms From</div>
+					</div>
 				</div>
 			</div>
 		)

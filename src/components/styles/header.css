@@ -1,29 +1,46 @@
 .header {
 	display: flex;
-	border: 4px solid red;
 	justify-content: space-between;
 }
 
 .hotel-name {
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 .main {
 	display: flex;
+	justify-content: space-between;
+	width: 68%;
 }
 
 .hotel-info {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .price-info {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+	margin-right: 45px;
 }
 
 .price {
 	font-size: 4em;
+}
+
+.info {
+	display: flex;
+	width: 110%;
+	justify-content: space-between;
+}
+
+.marker {
+	display: flex;
+	cursor: pointer;
+}
+
+.image {
+	align-self: flex-start;
 }

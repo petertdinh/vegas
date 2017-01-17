@@ -51,34 +51,34 @@ class CurrentHotelTabs extends Component {
 			    <div className="desc-tag" style={this.state.moreDescription ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			    	{description}
 			    </div>
-			    <div className="toggle" onClick={() => {
+			    <span className="toggle" onClick={() => {
 			    	this.toggleDescription();
 			    }}>
 			    	{this.state.moreDescription ? `HIDE FULL DESCRIPTION` : `SHOW FULL DESCRIPTION`}
-			    </div>
+			    </span>
 			  </Tab>
 			  <Tab label="DETAILS" value={1}>
 			  	<div className="details-tag" style={this.state.moreDetails ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			  		{details}
 			  	</div>
-			  	<div className="toggle" onClick={() => {
+			  	<span className="toggle" onClick={() => {
 			  		this.toggleDetail();
 			  	}}>
 			  		{this.state.moreDetails ? `VIEW LESS DETAILS` : `VIEW MORE DETAILS`}
-			  	</div>
+			  	</span>
 			  </Tab>
 			  <Tab label="LOCATION" value={2}>
-			  	<div>
+			  	<div className="location">
 				  	<img src={`http://image.flaticon.com/icons/svg/33/33622.svg`}
 				  			 height={25}
 				  			 width={25}
 				  			 alt="map-marker" />
-				  	{this.props.location}
+				  	{`${this.props.location}, Las Vegas, NV 89109`}
+				  	<img src={`http://localhost:8888/assets/images/map_venetian.png`}
+				  			 height={'98%'}
+				  			 width={'98%'}
+				  			 alt="hotel" />
 			  	</div>
-			  	<img src={`http://localhost:8888/assets/images/map_venetian.png`}
-			  			 height={'70%'}
-			  			 width={'70%'}
-			  			 alt="hotel" />
 			  </Tab>
 			</Tabs>
 		)

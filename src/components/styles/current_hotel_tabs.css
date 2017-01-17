@@ -5,6 +5,18 @@
 	margin-top: 2em;
 }
 
-.desc-paragraph, .detail {
-	padding: 15px;
+.desc-paragraph {
+	padding: 5px;
+}
+
+.toggle {
+	cursor: pointer;
+}
+
+.detail {
+	padding: 1em 0;
+}
+
+.location {
+	margin-top: 1em;
 }

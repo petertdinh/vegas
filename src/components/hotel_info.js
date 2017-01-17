@@ -15,7 +15,7 @@ class HotelInfo extends Component {
 				<div className="main">
 					<div>
 						<div className="hotel-name">
-							{this.props.name}
+							{this.props.name.toUpperCase()}
 						</div>
 							<StarRatingComponent
 								name="rating"

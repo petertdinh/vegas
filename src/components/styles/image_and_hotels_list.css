@@ -1,5 +1,9 @@
 .list-item {
 	display: flex;
 	justify-content: space-between;
-	padding: 5px;
+	padding: 6px;
+}
+
+.hotels-list {
+	margin-top: 1em;
 }

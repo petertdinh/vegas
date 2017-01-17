@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchHotels } from '../actions/index';
-import './styles/image_and_hotel_lists.css'
+import './styles/image_and_hotels_list.css';
 
-class ImageAndHotelLists extends Component {
+class ImageAndHotelsList extends Component {
 	componentDidMount() {
 		this.props.fetchHotels();
 	}
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchHotels })(ImageAndHotelLists);
+export default connect(mapStateToProps, { fetchHotels })(ImageAndHotelsList);

@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	font-family: 'Icons', sans-serif;
-	padding: 6px;
+	padding: 6px 7px;
 }
 
 .hotels-list {
@@ -10,13 +10,14 @@
 }
 
 .hotels-list {
-	background-color: #e5e1e8;
+	background-color: #EFEFEF;
+	padding: 1em 0;
 }
 
-.list-name {
-	color: #650893;
+.list-name, .list-price {
+	color: #895E95;
 }
 
 .list-price {
-	color: #6f6f70;
+	margin-left: 1em;
 }

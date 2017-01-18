@@ -43,7 +43,7 @@ class HotelInfo extends Component {
 					</div>
 				</div>
 				<div className="price-info">
-					<div className="price">{`$${this.props.price}`}</div>
+					<div className="price"><strong>{`$${this.props.price}`}</strong></div>
 					<div>Hotel Rooms From</div>
 				</div>
 			</div>

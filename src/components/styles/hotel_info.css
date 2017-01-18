@@ -1,12 +1,13 @@
 .hotel-info, .main, .price-info, .info, .marker, .phone, .best-price, .name-stars {
 	display: flex;
+	font-family: 'Icons', sans-serif;
 }
 
 .hotel-info {
 	justify-content: space-between;
 	width: 97%;
 	margin-left: 2em;
-	color: darkgrey;
+	color: #6B6C7A;
 }
 
 
@@ -27,12 +28,16 @@
 
 .price {
 	font-size: 4em;
-	color: #d87f13;
+	color: #F48721;
 }
 
 .info {
 	width: 110%;
 	justify-content: space-between;
+}
+
+.mark-icon, .phone-icon, .like-icon {
+	padding-right: 5px;
 }
 
 .marker {
@@ -43,11 +48,7 @@
 	align-self: flex-start;
 }
 
-.thumbs-up, .phone-icon {
-	padding-right: 4px;
-}
-
 .rating {
-	margin-top: 15px;
+	margin-top: 24px;
 	margin-left: 10px;
 }

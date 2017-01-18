@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { fetchCurrentHotel, forceLocationTab } from '../actions/index';
 import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
+import icons from './icons';
+import './styles/fonts.css';
 import './styles/hotel_info.css';
 
 class HotelInfo extends Component {
@@ -22,30 +24,20 @@ class HotelInfo extends Component {
 								name="rating"
 								editing={false}
 								starCount={this.props.starRating}
+								starColor={'#9999A3'}
 								value={5} />
 					</div>
 					<div className="info">
 						<div className="marker" onClick={() => this.props.forceLocationTab()}>
-							<img src={`http://localhost:8888/assets/images/marker.png`}
-									 height={16}
-									 width={16}
-									 alt="click-for-location" />
+							{icons.mark}
 							<div>Strip</div>
 						</div>
 						<div className="phone">
-							<img className="phone-icon"
-									 src={`http://localhost:8888/assets/images/phone.png`} 
-									 height={16} 
-									 width={16} 
-									 alt="phone-number" />
+							{icons.phone}
 							<div>{`$${this.props.phoneNumber}`}</div>
 						</div>
 						<div className="best-price">
-							<img className="thumbs-up"
-									 src={`http://localhost:8888/assets/images/thumbs-up.png`} 
-									 height={16}
-									 width={16} 
-									 alt="thumbs-up" />
+							{icons.like}
 							<div>Best Price Guarantee</div>
 						</div>
 					</div>

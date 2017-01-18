@@ -1,6 +1,7 @@
 .list-item {
 	display: flex;
 	justify-content: space-between;
+	font-family: 'Icons', sans-serif;
 	padding: 6px;
 }
 

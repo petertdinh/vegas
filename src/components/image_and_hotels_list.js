@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchHotels } from '../actions/index';
+import './styles/fonts.css';
 import './styles/image_and_hotels_list.css';
 
 class ImageAndHotelsList extends Component {

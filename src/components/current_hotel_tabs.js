@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { onTabChange } from '../actions/index';
 import { Tabs, Tab } from 'material-ui/Tabs';
+import './styles/fonts.css';
 import './styles/current_hotel_tabs.css';
 
 class CurrentHotelTabs extends Component {
@@ -49,11 +50,11 @@ class CurrentHotelTabs extends Component {
 
 		const tabsStyle = {
 			tabItemContainerStyle: {
-				backgroundColor: '#996099',
+				backgroundColor: '#895E95',
 				height: '3.5em'
 			},
 			inkBarStyle: {
-				backgroundColor: '#562656'
+				backgroundColor: '#733080'
 			}
 		};
 		

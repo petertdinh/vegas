@@ -24,6 +24,7 @@
 
 .price {
 	font-size: 4em;
+	color: #d87f13;
 }
 
 .info {
@@ -39,4 +40,16 @@
 
 .image {
 	align-self: flex-start;
+}
+
+.phone {
+	display: flex;
+}
+
+.best-price {
+	display: flex;
+}
+
+.thumbs-up, .phone-icon {
+	padding-right: 4px;
 }

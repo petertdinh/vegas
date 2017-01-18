@@ -45,15 +45,18 @@ class CurrentHotelTabs extends Component {
 			)
 		});
 
-		const style ={
+		const tabsStyle = {
 			tabItemContainerStyle: {
-				backgroundColor: '#800080',
+				backgroundColor: '#996099',
 				height: '3.5em'
+			},
+			inkBarStyle: {
+				backgroundColor: '#562656'
 			}
 		};
 		
 		return (
-			<Tabs {...style} className="tabs" onChange={this.onTabChange} value={this.props.activeTab}>
+			<Tabs {...tabsStyle} className="tabs" onChange={this.onTabChange} value={this.props.activeTab}>
 			  <Tab label="DESCRIPTION" value={0}>
 			    <div className="desc-tag" style={this.state.moreDescription ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			    	{description}

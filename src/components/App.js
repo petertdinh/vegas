@@ -6,9 +6,17 @@ import './styles/App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <ImageAndHotelsList />
-        <InfoAndTabs />
+    	<div>
+      	<div className="header">
+      		<img className="all-hotels"
+      				 src={`http://localhost:8888/assets/images/left.png`}
+      				 alt="SEE ALL LAS VEGAS HOTELS" />
+      		SEE ALL LAS VEGAS HOTELS
+      	</div>
+	      <div className="App">
+	        <ImageAndHotelsList />
+	        <InfoAndTabs />
+	      </div>
       </div>
     )
   }

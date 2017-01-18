@@ -31,8 +31,22 @@ class HotelInfo extends Component {
 									 alt="click-for-location" />
 							<div>Strip</div>
 						</div>
-						<div>{`$${this.props.phoneNumber}`}</div>
-						<div>Best Price Guarantee</div>
+						<div className="phone">
+							<img className="phone-icon"
+									 src={`http://localhost:8888/assets/images/phone.png`} 
+									 height={15} 
+									 width={15} 
+									 alt="phone-number" />
+							<div>{`$${this.props.phoneNumber}`}</div>
+						</div>
+						<div className="best-price">
+							<img className="thumbs-up"
+									 src={`http://localhost:8888/assets/images/thumbs-up.png`} 
+									 height={15}
+									 width={15} 
+									 alt="thumbs-up" />
+							<div> Best Price Guarantee</div>
+						</div>
 					</div>
 				</div>
 				<div className="price-info">

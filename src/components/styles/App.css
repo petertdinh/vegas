@@ -1,5 +1,16 @@
 .App {
 	display: flex;
 	flex-direction: row;
-	margin: 1em 29em;
+	margin: .5em 29em;
 }
+
+.header {
+	margin: .5em 32.5em;
+	font-size: .9em;
+	color: #650893;
+}
+
+.all-hotels {
+	padding-right: 4px;
+}
+

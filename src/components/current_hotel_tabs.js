@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrentHotel, onTabChange } from '../actions/index';
+import { onTabChange } from '../actions/index';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import './styles/current_hotel_tabs.css';
 
@@ -27,7 +27,9 @@ class CurrentHotelTabs extends Component {
 	}
 
 	onTabChange = (value) => {
+		//the selected tab is handled by the redux store
 		this.props.onTabChange(value);
+		//collapse content on all tabs upon change
 		this.setState({moreDescription: false, moreDetails: false});
 	}
 
@@ -107,4 +109,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchCurrentHotel, onTabChange })(CurrentHotelTabs);
+export default connect(mapStateToProps, { onTabChange })(CurrentHotelTabs);

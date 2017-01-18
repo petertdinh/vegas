@@ -13,11 +13,12 @@ class HotelInfo extends Component {
 		return (
 			<div className="hotel-info">
 				<div className="main">
-					<div>
+					<div className="name-stars">
 						<div className="hotel-name">
 							{this.props.name.toUpperCase()}
 						</div>
 							<StarRatingComponent
+								className="rating"
 								name="rating"
 								editing={false}
 								starCount={this.props.starRating}
@@ -25,27 +26,27 @@ class HotelInfo extends Component {
 					</div>
 					<div className="info">
 						<div className="marker" onClick={() => this.props.forceLocationTab()}>
-							<img src={`http://image.flaticon.com/icons/svg/33/33622.svg`}
-									 height={15}
-									 width={15}
+							<img src={`http://localhost:8888/assets/images/marker.png`}
+									 height={16}
+									 width={16}
 									 alt="click-for-location" />
 							<div>Strip</div>
 						</div>
 						<div className="phone">
 							<img className="phone-icon"
 									 src={`http://localhost:8888/assets/images/phone.png`} 
-									 height={15} 
-									 width={15} 
+									 height={16} 
+									 width={16} 
 									 alt="phone-number" />
 							<div>{`$${this.props.phoneNumber}`}</div>
 						</div>
 						<div className="best-price">
 							<img className="thumbs-up"
 									 src={`http://localhost:8888/assets/images/thumbs-up.png`} 
-									 height={15}
-									 width={15} 
+									 height={16}
+									 width={16} 
 									 alt="thumbs-up" />
-							<div> Best Price Guarantee</div>
+							<div>Best Price Guarantee</div>
 						</div>
 					</div>
 				</div>

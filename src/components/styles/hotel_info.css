@@ -1,12 +1,16 @@
-.hotel-info {
+.hotel-info, .main, .price-info, .info, .marker, .phone, .best-price, .name-stars {
 	display: flex;
+}
+
+.hotel-info {
 	justify-content: space-between;
 	width: 97%;
 	margin-left: 2em;
+	color: darkgrey;
 }
 
+
 .main {
-	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 }
@@ -16,7 +20,6 @@
 }
 
 .price-info {
-	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	margin-right: 45px;
@@ -28,13 +31,11 @@
 }
 
 .info {
-	display: flex;
 	width: 110%;
 	justify-content: space-between;
 }
 
 .marker {
-	display: flex;
 	cursor: pointer;
 }
 
@@ -42,14 +43,11 @@
 	align-self: flex-start;
 }
 
-.phone {
-	display: flex;
-}
-
-.best-price {
-	display: flex;
-}
-
 .thumbs-up, .phone-icon {
 	padding-right: 4px;
+}
+
+.rating {
+	margin-top: 15px;
+	margin-left: 10px;
 }

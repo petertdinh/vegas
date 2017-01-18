@@ -22,7 +22,7 @@ class CurrentHotelTabs extends Component {
 		this.toggleMoreOrLess('moreDescription');
 	}
 
-	toggleDetail = () => {
+	toggleDetails = () => {
 		this.toggleMoreOrLess('moreDetails');
 	}
 
@@ -44,9 +44,16 @@ class CurrentHotelTabs extends Component {
 				</div>
 			)
 		});
+
+		const style ={
+			tabItemContainerStyle: {
+				backgroundColor: '#800080',
+				height: '3.5em'
+			}
+		};
 		
 		return (
-			<Tabs className="tabs" onChange={this.onTabChange} value={this.props.activeTab}>
+			<Tabs {...style} className="tabs" onChange={this.onTabChange} value={this.props.activeTab}>
 			  <Tab label="DESCRIPTION" value={0}>
 			    <div className="desc-tag" style={this.state.moreDescription ? {height: '100%'} : {height: 200, overflow: 'hidden'}}>
 			    	{description}
@@ -55,6 +62,7 @@ class CurrentHotelTabs extends Component {
 			    	this.toggleDescription();
 			    }}>
 			    	{this.state.moreDescription ? `HIDE FULL DESCRIPTION` : `SHOW FULL DESCRIPTION`}
+			   		{this.state.moreDescription ? <img className="arrow" src="http://localhost:8888/assets/images/up.png" alt="less"/> : <img className="arrow" src="http://localhost:8888/assets/images/down.png" alt="more"/>}
 			    </span>
 			  </Tab>
 			  <Tab label="DETAILS" value={1}>
@@ -62,9 +70,10 @@ class CurrentHotelTabs extends Component {
 			  		{details}
 			  	</div>
 			  	<span className="toggle" onClick={() => {
-			  		this.toggleDetail();
+			  		this.toggleDetails();
 			  	}}>
 			  		{this.state.moreDetails ? `VIEW LESS DETAILS` : `VIEW MORE DETAILS`}
+			  		{this.state.moreDetails ? <img className="arrow" src="http://localhost:8888/assets/images/up.png" alt="less"/> : <img className="arrow" src="http://localhost:8888/assets/images/down.png" alt="more"/>}
 			  	</span>
 			  </Tab>
 			  <Tab label="LOCATION" value={2}>

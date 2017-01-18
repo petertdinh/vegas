@@ -12,7 +12,7 @@ class ImageAndHotelsList extends Component {
 		const list = this.props.hotels.map(hotel => (
 				<div className="list-item" key={hotel.code}>
 					<div className="list-name">{hotel.name}</div>
-					<div className="list-price">{`$${hotel.price}`}</div>
+					<div className="list-price">{`$${hotel.price % 1 === 0 ? `${hotel.price}.00`: hotel.price}`}</div>
 				</div>
 		));
 

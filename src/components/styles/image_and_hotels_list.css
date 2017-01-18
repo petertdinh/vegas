@@ -7,3 +7,15 @@
 .hotels-list {
 	margin-top: 1em;
 }
+
+.hotels-list {
+	background-color: #e5e1e8;
+}
+
+.list-name {
+	color: #650893;
+}
+
+.list-price {
+	color: #6f6f70;
+}

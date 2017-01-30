@@ -26,3 +26,14 @@
 .arrow {
 	margin: 0 5px;
 }
+
+@media only screen
+	and (min-device-width: 320px)
+	and (max-device-width: 736px) {
+		.tabs {
+			align-self: stretch;
+			font-family: 'Icons', sans-serif;
+			width: 100%;
+			margin: auto;
+		}
+	}

@@ -52,3 +52,34 @@
 	margin-top: 24px;
 	margin-left: 10px;
 }
+
+@media only screen
+	and (min-device-width: 320px)
+	and (max-device-width: 736px) {
+		.hotel-info, .main, .price-info, .info, .marker, .phone, .best-price, .name-stars {
+			display: flex;
+			flex-direction: column;
+			font-family: 'Icons', sans-serif;
+		}
+
+		.price-info {
+			order: -1;
+		}
+
+		.rating {
+			width: 20%;
+			margin-top: 0%;
+			margin-left: -2%;
+		}
+
+		.hotel-info {
+			margin-left: 0;
+			width: 110%;
+		}
+
+		.marker, .phone, .best-price {
+			display: flex;
+			flex-direction: row;
+			padding: 2px 0;
+		}
+	}

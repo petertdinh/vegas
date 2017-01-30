@@ -3,3 +3,13 @@
 	flex-direction: row;
 	margin: .5em 24.5%;
 }
+
+@media only screen
+	and (min-device-width: 320px)
+	and (max-device-width: 736px) {
+		.App {
+			display: flex;
+			flex-direction: column-reverse;
+			margin: 0;
+		}
+	}
